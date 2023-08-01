@@ -34,7 +34,7 @@ function Intro() {
                     <source src={StartUp} />
                 </video>
                 <div className="textOverlay">
-                    <h1 className="introText">Portfolio....!!!!</h1>
+                    <h1 className="introText">My Portfolio....!!!!</h1>
                 </div>
             </div>
             <div className="transition">
