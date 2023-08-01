@@ -1,0 +1,129 @@
+.team {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.teamCard {
+    height: 300px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 4vw;
+    margin: 10px;
+    position: relative;
+    overflow: hidden;
+    place-content: center;
+    transition: transform 700ms linear;
+}
+
+.teamHeading {
+    font-family: cursive;
+    color: white;
+    font-size: 24px;
+    margin-block: 0;
+}
+
+.teamGridLayout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2vw;
+    place-items: center;
+    margin: 2vw;
+    margin-top: 100px;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #ccc;
+    margin-block-end: 20px;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.teamCard:hover .image-container {
+    animation: rotate 700ms linear 1;
+    animation-fill-mode: forwards;
+}
+
+.teamCard:not(:hover) .image-container {
+    animation: slide-back 700ms linear 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes rotate {
+    0% {
+        transform: translateY(0px)
+        rotateX(0deg)
+        rotateY(0deg);
+    }
+    100% {
+        transform: translateY(-20px)
+        rotateX(0)
+        rotateY(-360deg);
+    }
+}
+
+@keyframes slide-back {
+    0% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@media (min-width: 1200px) {
+    .team {
+        height: 63vh;
+    }
+
+    .teamGridLayout {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 1200px) {
+
+    .teamGridLayout {
+        gap: 30px;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .team {
+        height: 75vh;
+    }
+
+    .teamCard {
+        height: 215px;
+        width: 175px;
+    }
+
+    .teamGridLayout {
+        display: block;
+        margin-top: 50px;
+    }
+
+    .teamHeading {
+        font-size: 18px;
+    }
+
+    .image-container {
+        width: 120px;
+        height: 120px;
+    }
+}
